@@ -245,7 +245,7 @@ class ServerState:
             while True:
                 if close:
                     return
-                await asyncio.sleep(0.001)
+                await asyncio.sleep(0.0005)
                 msg = opus_writer.read_bytes()
                 if len(msg) > 0:
                     await ws.send_bytes(b"\x01" + msg)
